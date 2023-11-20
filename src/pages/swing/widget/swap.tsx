@@ -1,4 +1,4 @@
-import SwapWidget from "components/swing/Swap";
+import SwapWidget from "components/swing/widget/Swap";
 
 const Swap = () => {
   return <SwapWidget />;

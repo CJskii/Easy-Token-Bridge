@@ -1,4 +1,4 @@
-import Swap from "components/squid/Swap";
+import Swap from "components/squid/widget/Swap";
 
 const SquidSwap = () => {
   return <Swap />;

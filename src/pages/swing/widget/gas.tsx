@@ -1,4 +1,4 @@
-import GasWidget from "components/swing/Gas";
+import GasWidget from "components/swing/widget/Gas";
 
 const Gas = () => {
   return <GasWidget />;

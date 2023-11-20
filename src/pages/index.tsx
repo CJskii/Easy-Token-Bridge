@@ -8,13 +8,13 @@ export default function Home() {
         <h1 className="text-3xl text-white">Swing</h1>
         <div className="flex items-center justify-center gap-2">
           <Link
-            href="/swing-swap"
+            href="/swing/widget/swap"
             className="rounded-lg border-2 border-black px-4 py-2 text-white"
           >
             Swap{" "}
           </Link>
           <Link
-            href="/swing-gas"
+            href="/swing/widget/gas"
             className="rounded-lg border-2 border-black px-4 py-2 text-white"
           >
             Gas
@@ -24,7 +24,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-4 p-8">
         <h1 className="text-3xl text-white">Squid</h1>
         <Link
-          href="/squid-swap"
+          href="/squid/widget/swap"
           className="rounded-lg border-2 border-black px-4 py-2 text-white"
         >
           Swap{" "}

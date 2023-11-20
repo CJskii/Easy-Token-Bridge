@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@0xsquid/widget": "^1.6.19",
     "@swing.xyz/ui": "^0.44.0",
     "@t3-oss/env-nextjs": "^0.7.0",
     "next": "^14.0.0",

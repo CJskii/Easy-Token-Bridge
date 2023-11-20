@@ -17,6 +17,7 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  transpilePackages: ["@0xsquid/widget"],
 };
 
 export default config;

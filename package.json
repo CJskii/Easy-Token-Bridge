@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@0xsquid/widget": "^1.6.19",
+    "@swing.xyz/sdk": "^0.44.0",
     "@swing.xyz/ui": "^0.44.0",
     "@t3-oss/env-nextjs": "^0.7.0",
     "next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "wagmi": "^1.4.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {

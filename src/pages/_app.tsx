@@ -3,6 +3,19 @@ import Head from "next/head";
 
 import "~/styles/globals.css";
 
+import { WagmiConfig, createConfig, configureChains, mainnet } from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
+
+const { publicClient, webSocketPublicClient } = configureChains(
+  [mainnet],
+  [publicProvider()],
+);
+
+const config = createConfig({
+  publicClient,
+  webSocketPublicClient,
+});
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
@@ -14,7 +27,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <div className="font-plex-mono min-w-screen flex min-h-screen flex-col items-center justify-between">
         {/* <Navbar /> */}
         <main className="my-4 flex min-h-full w-full flex-col items-center justify-center gap-4 rounded-lg px-4 py-8">
-          <Component {...pageProps} />
+          <WagmiConfig config={config}>
+            <Component {...pageProps} />
+          </WagmiConfig>
         </main>
         {/* <Footer /> */}
       </div>

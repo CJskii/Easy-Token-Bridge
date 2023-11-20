@@ -6,12 +6,19 @@ export default function Home() {
       <div className="w-100 grid min-h-full grid-flow-col">
         <div className="flex flex-col items-center justify-center gap-4 p-8">
           <h1 className="text-3xl text-white">Swing</h1>
+          <p>Widgets</p>
           <div className="flex items-center justify-center gap-2">
             <Link href="/swing/widget/swap" className="btn">
               Swap{" "}
             </Link>
             <Link href="/swing/widget/gas" className="btn">
               Gas
+            </Link>
+          </div>
+          <p>SDK</p>
+          <div>
+            <Link href="/swing/sdk/swap" className="btn">
+              Swap{" "}
             </Link>
           </div>
         </div>

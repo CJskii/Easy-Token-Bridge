@@ -1,6 +1,6 @@
 import { SquidWidget } from "@0xsquid/widget";
 
-const Swap = () => {
+const MainnetSwap = () => {
   return (
     <SquidWidget
       config={{
@@ -63,4 +63,4 @@ const Swap = () => {
   );
 };
 
-export default Swap;
+export default MainnetSwap;

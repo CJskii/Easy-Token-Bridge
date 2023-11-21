@@ -12,18 +12,18 @@ const Swap = () => {
   const [transferParams, setTransferParams] = useState<TransferParams>({
     fromChain: "ethereum", // Source chain
     fromToken: "USDC", // Source token
-    fromUserAddress: "0x0", // Source chain wallet address
+    fromUserAddress: "", // Source chain wallet address
 
     amount: "100", // Amount to transfer in token decimals
 
     toChain: "polygon", // Destination chain
     toToken: "USDC", // Destination token
-    toUserAddress: "0x0", // Ending chain wallet address
+    toUserAddress: "", // Ending chain wallet address
   });
 
   useEffect(() => {
     const swingSDK = new SwingSDK();
-    console.log("walletClient", walletClient);
+    console.log(swingSDK);
 
     if (!walletClient.data?.transport || !walletClient.data.chain.id) {
       return;
@@ -40,16 +40,52 @@ const Swap = () => {
     setQuote(quote);
   };
 
+  const getAvailableChains = async () => {
+    const chains = await sdk.getAvailableSendChains();
+    console.log("chains", chains);
+  };
+
   return (
     <>
       <h1>Swing SDK</h1>
+      <input
+        type="text"
+        value={transferParams.fromUserAddress}
+        placeholder="From user address"
+        className="input input-bordered w-full max-w-xs"
+        onChange={(e) => {
+          transferParams.toUserAddress
+            ? setTransferParams({
+                ...transferParams,
+                fromUserAddress: e.target.value,
+              })
+            : setTransferParams({
+                ...transferParams,
+                fromUserAddress: e.target.value,
+                toUserAddress: e.target.value,
+              });
+        }}
+      />
       <p>From: {transferParams.fromChain}</p>
+      <input
+        type="text"
+        value={transferParams.toUserAddress}
+        placeholder="To user address"
+        className="input input-bordered w-full max-w-xs"
+        onChange={(e) => {
+          setTransferParams({
+            ...transferParams,
+            toUserAddress: e.target.value,
+          });
+        }}
+      />
       <p>To: {transferParams.toChain}</p>
       <p>From token: {transferParams.fromToken}</p>
       <p>To token: {transferParams.toToken}</p>
       <input
         type="number"
         value={transferParams.amount}
+        className="input input-bordered w-full max-w-xs"
         onChange={(e) => {
           setTransferParams({
             ...transferParams,
@@ -75,6 +111,10 @@ const Swap = () => {
 
       <button className="btn" onClick={getQuote}>
         Get quote
+      </button>
+
+      <button className="btn" onClick={getAvailableChains}>
+        Get available chains (console)
       </button>
     </>
   );

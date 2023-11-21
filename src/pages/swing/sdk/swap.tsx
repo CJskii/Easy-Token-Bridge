@@ -41,7 +41,7 @@ const Swap = () => {
   };
 
   const getAvailableChains = async () => {
-    const chains = await sdk.getAvailableSendChains();
+    const chains = sdk.getAvailableSendChains();
     console.log("chains", chains);
   };
 

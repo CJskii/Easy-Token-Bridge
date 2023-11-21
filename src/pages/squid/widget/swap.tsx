@@ -10,24 +10,14 @@ const SquidSwap = () => {
       {env === "mainnet" ? (
         <>
           {" "}
-          <button
-            className="btn"
-            onClick={(e) => {
-              setEnv("testnet");
-            }}
-          >
+          <button className="btn" onClick={() => setEnv("testnet")}>
             Switch to testnet
           </button>
           <MainnetSwap />
         </>
       ) : (
         <>
-          <button
-            className="btn"
-            onClick={(e) => {
-              setEnv("mainnet");
-            }}
-          >
+          <button className="btn" onClick={() => setEnv("mainnet")}>
             Switch to mainnet
           </button>
           <TestnetSwap />
